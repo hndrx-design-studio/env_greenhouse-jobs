@@ -633,6 +633,7 @@ function applyFilters() {
     let noJobsMessage = document.getElementById("noJobsMessage");
     if (visibleDepartments.length === 0) noJobsMessage.style.display = "block";
     else noJobsMessage.style.display = "none";
+// $('.masonry').masonry('layout');
 }
 jobFilter.onchange = applyFilters;
 locationFilter.onchange = applyFilters;
@@ -706,6 +707,15 @@ function writeJobs() {
             loading.classList.add("invisible");
             loading.remove();
             root.classList.add("visible");
+        // Initialize the Masonry grid after jobs have been added to the DOM
+        // $('.masonry').masonry({
+        //     // columnWidth: '.grid-sizer',
+        //     itemSelector: '.masonry-item',
+        //     // percentPosition: true,
+        //     grid: 16,
+        //     fitWidth: true,
+        //     columnWidth: 320
+        // });
         });
     });
 }

@@ -11,7 +11,6 @@ const dateFilter = document.getElementById("filter-date");
 const errorWrapper = document.getElementById("errwrapper");
 const errorText = document.getElementById("errtext");
 
-
 function applyFilters() {
     let selectedSection = jobFilter.value;
     let selectedLocation = locationFilter.value;
@@ -82,7 +81,7 @@ function applyFilters() {
     } else {
         noJobsMessage.style.display = "none";
     }
-
+    // $('.masonry').masonry('layout');
 
  }
 
@@ -182,6 +181,16 @@ function writeJobs() {
             loading.classList.add("invisible");
             loading.remove();
             root.classList.add("visible");
+
+            // Initialize the Masonry grid after jobs have been added to the DOM
+            // $('.masonry').masonry({
+            //     // columnWidth: '.grid-sizer',
+            //     itemSelector: '.masonry-item',
+            //     // percentPosition: true,
+            //     grid: 16,
+            //     fitWidth: true,
+            //     columnWidth: 320
+            // });
         });
     });
 }
